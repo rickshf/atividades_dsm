@@ -1,12 +1,7 @@
-/**
- * Função genérica para fazer a requisição à API e exibir o resultado.
- * @param {string} url - A URL do endpoint da API.
- * @param {string} resultadoElementId - O ID do elemento HTML onde o resultado será exibido.
- */
 async function fazerRequisicao(url, resultadoElementId) {
   const elementoResultado = document.getElementById(resultadoElementId);
   
-  // Limpa as classes de estilo da requisição anterior
+
   elementoResultado.classList.remove('ok', 'erro');
 
   try {
@@ -14,23 +9,20 @@ async function fazerRequisicao(url, resultadoElementId) {
     const data = await response.json();
 
     if (response.ok) {
-      // Se a resposta for bem-sucedida, exibe o resultado e adiciona a classe .ok
+     
       elementoResultado.innerHTML = `<strong>Resultado:</strong> ${data.resultado}`;
-      elementoResultado.classList.add('ok'); // <-- MUDANÇA AQUI
+      elementoResultado.classList.add('ok'); 
     } else {
-      // Se a resposta indicar um erro, exibe o erro e adiciona a classe .erro
+     
       elementoResultado.innerHTML = `<strong>Erro:</strong> ${data.erro}`;
-      elementoResultado.classList.add('erro'); // <-- MUDANÇA AQUI
+      elementoResultado.classList.add('erro'); 
     }
   } catch (error) {
-    // Em caso de erro de rede, exibe a falha e adiciona a classe .erro
+    
     elementoResultado.innerHTML = '<strong>Erro:</strong> Falha na comunicação com o servidor.';
     elementoResultado.classList.add('erro');
   }
 }
-
-// As outras funções (calcularSomatorio, calcularMedia, etc.) não precisam ser alteradas.
-// Elas continuarão funcionando normalmente com a nova versão da fazerRequisicao.
 
 async function calcularSomatorio() {
   const inicio = document.getElementById('somatorioInicio').value;

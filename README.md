@@ -28,11 +28,12 @@ Este projeto consiste em uma aplicação cliente-servidor desenvolvida em **Node
 ├── public/
 │   └── index.html          # Página HTML com o formulário para requisições
 ├── src/
-├── ├──routes/
+│   ├──routes/
 │   │   └── operacoes.js    # Código com as rotas
 │   └── index.js            # Código principal do servidor
 ├── package.json            # Configuração do projeto Node.js
 └── README.md               # Documentação do projeto
+```
 
 ## 🚀 Executando o Projeto
 
